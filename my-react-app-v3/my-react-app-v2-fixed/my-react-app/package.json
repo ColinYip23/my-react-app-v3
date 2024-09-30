@@ -1,9 +1,12 @@
 {
+  "homepage": "https://ColinYip23.github.io/my-react-app-v3",
   "name": "my-react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
