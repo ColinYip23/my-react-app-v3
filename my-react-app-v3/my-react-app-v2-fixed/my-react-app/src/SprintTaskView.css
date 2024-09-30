@@ -1,0 +1,386 @@
+/* Sprint Task View Container */
+.sprint-task-view {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 100px;
+  }
+  
+  /* Sprint Detail Section */
+  .sprint-detail__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    background-color: #fffffff1; /* White background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .sprint-detail__info {
+    text-align: left; /* Align sprint info to the left */
+  }
+  
+  .sprint-detail__info h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .sprint-detail__info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .sprint-detail__return-btn {
+    margin-left: auto;
+    padding: 10px 20px;
+    background-color: #f8c390;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .sprint-detail__return-btn:hover {
+    background-color: #f2b67b;
+    transform: scale(1.005); /* Slightly scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  }
+  
+  /* View Toggle Buttons */
+  .view-toggle {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 1px;
+  }
+  
+  .view-toggle button {
+    padding: 10px 25px;
+    background-color: #ffffff; /* White background */
+    border: 2px solid #ddd; /* Light grey border */
+    border-radius: 30px; /* Rounded edges for a modern look */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: #555; /* Dark grey text color */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    outline: none; /* Remove default outline */
+  }
+  
+  .view-toggle button.active {
+    background-color: #ffffff; /* Active background color */
+    color: #ff820e; /* Orange text for contrast */
+    border: 2px solid #0000003b; /* Match border to background color */
+    box-shadow: 0 4px 10px rgba(68, 68, 68, 0.3); /* Slight glow effect */
+  }
+  
+  .view-toggle button:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    border-color: #ccc; /* Darker border on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  }
+  
+  /* Kanban View */
+  .kanban-view {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    width: 100%; /* Make Kanban view take full width */
+  }
+  
+  .kanban-column {
+    flex: 1;
+    background-color: #fff8e1ec; /* Lighter orange for columns */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s; /* Smooth shadow transition */
+    height: 59vh; /* Adjusted height to leave space at the bottom */
+    box-sizing: border-box;
+    overflow: auto; /* Add vertical scroll */
+  }
+  
+  .kanban-column:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+  }
+  
+  .kanban-column h3 {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #facb85de; /* Light orange background for headers */
+    text-align: left;
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for headers */
+  }
+  
+  .kanban-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* List View */
+  .list-view {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  
+  /* Task Bubble Styling */
+  .task-bubble {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: #fff; /* White background */
+    border: 2px solid rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+    position: relative; /* For absolute positioning of kebab button */
+  }
+  
+  .task-bubble:hover {
+    transform: scale(1.005); /* Slightly scale up on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+    z-index: 10;
+  }
+  
+  /* Kebab Menu Styling */
+  .task-bubble__kebab-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .task-bubble__kebab-menu-btn {
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #555;
+    padding: 15px;
+    transition: color 0.3s;
+  }
+  
+  .task-bubble__kebab-menu-btn:hover {
+    color: #000;
+  }
+  
+  .task-bubble__kebab-dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    z-index: 999; /* Higher z-index to ensure it's on top */
+    width: 150px; /* Fixed width for consistency */
+  }
+  
+  .task-bubble__kebab-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .task-bubble__kebab-dropdown li {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: black; /* Ensure text is black */
+    border-bottom: 1px solid #eee;
+  }
+  
+  .task-bubble__kebab-dropdown li:last-child {
+    border-bottom: none;
+  }
+  
+  .task-bubble__kebab-dropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Task Content */
+  .task-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .task-bubble__name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left; /* Align task name to the left */
+  }
+  
+  .task-bubble__info-container {
+    display: flex;
+    justify-content: flex-start; /* Align priority, story points, tags to the left */
+    align-items: center;
+    gap: 15px; /* Adjust spacing as needed */
+    flex-wrap: nowrap;
+  }
+  
+  .task-bubble__priority-tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  
+  .task-bubble__priority-tag.low {
+    background-color: green;
+  }
+  
+  .task-bubble__priority-tag.medium {
+    background-color: blue;
+  }
+  
+  .task-bubble__priority-tag.high {
+    background-color: orange;
+  }
+  
+  .task-bubble__priority-tag.urgent {
+    background-color: red;
+  }
+  
+  .task-bubble__priority-tag.important {
+    background-color: #ff8c00; /* Important is orange */
+  }
+  
+  .task-bubble__info.story-point {
+    width: 30px;
+    height: 30px;
+    background-color: #f0a574;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .task-bubble__tag-container {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .task-bubble__selected-tag {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+  }
+  
+  .task-bubble__selected-tag[data-tag='Frontend'] {
+    background-color: #ff8c00;
+  }
+  
+  .task-bubble__selected-tag[data-tag='Backend'] {
+    background-color: #4682b4;
+  }
+  
+  .task-bubble__selected-tag[data-tag='API'] {
+    background-color: #8a2be2;
+  }
+  
+  .task-bubble__selected-tag[data-tag='Database'] {
+    background-color: #228b22;
+  }
+  
+  .task-bubble__selected-tag[data-tag='Framework'] {
+    background-color: #dc143c;
+  }
+  
+  .task-bubble__selected-tag[data-tag='Testing'] {
+    background-color: #ffd700;
+    color: black;
+  }
+  
+  .task-bubble__selected-tag[data-tag='UI'] {
+    background-color: #ff1493;
+  }
+  
+  .task-bubble__selected-tag[data-tag='UX'] {
+    background-color: #9932cc;
+  }
+  
+  .task-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .task-tag {
+    background-color: #facb85; /* Light orange */
+    color: black; /* Changed text color to black */
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+  }
+  
+  .task-status-tag {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .task-status-tag.not-started {
+    background-color: #ffa500; /* Orange */
+  }
+  
+  .task-status-tag.in-progress {
+    background-color: #1e90ff; /* Dodger Blue */
+  }
+  
+  .task-status-tag.completed {
+    background-color: #32cd32; /* Lime Green */
+  }
+  
+  /* Optional: Add hover effects or transitions if desired */
+  
+  /* Example additional styles for better alignment */
+  .task-bubble__name {
+    display: flex;
+    align-items: center; /* Align task name and status tag vertically */
+  }
+
+  /* Task Status Tag Styling */
+  .task-status-tag {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: white;
+    text-transform: capitalize;
+  }
+
+  .task-status-tag.not-started {
+    background-color: grey;
+  }
+
+  .task-status-tag.in-progress {
+    background-color: blue;
+  }
+
+  .task-status-tag.completed {
+    background-color: green;
+  }

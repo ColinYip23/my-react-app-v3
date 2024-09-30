@@ -1,0 +1,134 @@
+.outer-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3); /* Adds a subtle overlay effect */
+  z-index: 1000; /* Keeps the form on top */
+}
+
+.task-details {
+  background-color: white;
+  padding: 30px;
+  width: 600px; /* Make the form wider */
+  max-height: 90vh; /* Allow scrolling if the form becomes too large */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.input-bubble {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  width: 100%;
+}
+
+.input-bubble p {
+  margin: 0;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.selected-tag {
+  display: inline-block;
+  background-color: #ddd;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.selected-tag[data-tag='Frontend'] {
+  background-color: #ff8c00;
+}
+
+.selected-tag[data-tag='Backend'] {
+  background-color: #4682b4;
+}
+
+.selected-tag[data-tag='API'] {
+  background-color: #8a2be2;
+}
+
+.selected-tag[data-tag='Database'] {
+  background-color: #228b22;
+}
+
+.selected-tag[data-tag='Framework'] {
+  background-color: #dc143c;
+}
+
+.selected-tag[data-tag='Testing'] {
+  background-color: #ffd700;
+  color: black;
+}
+
+.selected-tag[data-tag='UI'] {
+  background-color: #ff1493;
+}
+
+.selected-tag[data-tag='UX'] {
+  background-color: #9932cc;
+}
+
+.status-label {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+  color: white;
+  text-transform: capitalize;
+}
+
+.status-label.not-started {
+  background-color: grey;
+}
+
+.status-label.in-progress {
+  background-color: blue;
+}
+
+.status-label.completed {
+  background-color: green;
+}
+
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  background-color: #ccc;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}

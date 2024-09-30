@@ -1,0 +1,332 @@
+/* src/TaskArea.css */
+
+.task-area {
+  background-color: #f6d8a8e3; /* Lighter orange color */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  width: 97%;
+  height: 84vh; /* Adjusted height to leave space at the bottom */
+  box-sizing: border-box;
+  margin: 120px auto 0;
+  overflow-y: auto;
+}
+
+/* Sort and Filter Container */
+.task-area__filter-sort-container {
+  width: 100%;
+  background-color: #fff5e6; /* A light background */
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.task-area__sort-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.task-area__sort-options label {
+  font-weight: bold;
+  white-space: nowrap; /* Prevent label from wrapping */
+}
+
+.task-area__sort-options select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.task-area__filter-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-area__filter-options label {
+  font-weight: bold;
+}
+
+.task-area__filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-area__filter-tag {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.task-area__filter-tag input {
+  margin-right: 5px;
+}
+
+.task-area__filter-tag[data-tag='Frontend'] {
+  background-color: #ff8c00;
+}
+
+.task-area__filter-tag[data-tag='Backend'] {
+  background-color: #4682b4;
+}
+
+.task-area__filter-tag[data-tag='API'] {
+  background-color: #8a2be2;
+}
+
+.task-area__filter-tag[data-tag='Database'] {
+  background-color: #228b22;
+}
+
+.task-area__filter-tag[data-tag='Framework'] {
+  background-color: #dc143c;
+}
+
+.task-area__filter-tag[data-tag='Testing'] {
+  background-color: #ffd700;
+  color: black;
+}
+
+.task-area__filter-tag[data-tag='UI'] {
+  background-color: #ff1493;
+}
+
+.task-area__filter-tag[data-tag='UX'] {
+  background-color: #9932cc;
+}
+
+/* Task List Styles */
+.task-area__task-wrapper {
+  width: 100%;
+}
+
+.task-area__no-tasks {
+  color: rgba(0, 0, 0, 0.788);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.task-area__task-bubble {
+  margin: 8px 0; /* Added margin to separate bubbles */
+  background-color: #fff; /* White background */
+  border: 2px solid rgba(0, 0, 0, 0.24);
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hover effect to enlarge bubble */
+.task-area__task-bubble:hover {
+  transform: scale(1.006); /* Slightly scale up on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow effect */
+  z-index: 10;
+}
+
+.task-area__task-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+.task-area__task-info-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 0;
+  position: relative;
+}
+
+.task-area__task-info {
+  font-size: 16px;
+  color: black;
+  white-space: nowrap;
+}
+
+.task-area__task-info.story-point {
+  width: 30px;
+  height: 30px;
+  /* background-color will be set dynamically */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-area__tag-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+  max-width: 800px;
+  flex-grow: 0;
+  flex-wrap: wrap;
+}
+
+.task-area__selected-tag {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+.task-area__selected-tag[data-tag='Frontend'] {
+  background-color: #ff8c00;
+}
+
+.task-area__selected-tag[data-tag='Backend'] {
+  background-color: #4682b4;
+}
+
+.task-area__selected-tag[data-tag='API'] {
+  background-color: #8a2be2;
+}
+
+.task-area__selected-tag[data-tag='Database'] {
+  background-color: #228b22;
+}
+
+.task-area__selected-tag[data-tag='Framework'] {
+  background-color: #dc143c;
+}
+
+.task-area__selected-tag[data-tag='Testing'] {
+  background-color: #ffd700;
+  color: black;
+}
+
+.task-area__selected-tag[data-tag='UI'] {
+  background-color: #ff1493;
+}
+
+.task-area__selected-tag[data-tag='UX'] {
+  background-color: #9932cc;
+}
+
+.task-area__kebab-menu {
+  position: relative;
+}
+
+.task-area__kebab-menu-btn {
+  cursor: pointer;
+  font-size: 24px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 5px;
+  color: black; /* Make the kebab button black */
+  padding: 5px 15px;
+}
+
+.task-area__kebab-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.task-area__kebab-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-area__kebab-dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.task-area__kebab-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.task-area__kebab-dropdown hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
+
+/* Priority Tags */
+.task-area__priority-tag {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.task-area__priority-tag.low {
+  background-color: green;
+}
+
+.task-area__priority-tag.medium {
+  background-color: blue;
+}
+
+.task-area__priority-tag.high {
+  background-color: orange;
+}
+
+.task-area__priority-tag.important {
+  background-color: orange;
+}
+
+.task-area__priority-tag.urgent {
+  background-color: red;
+}
+
+/* Separator Line */
+.task-area__separator {
+  width: calc(100% - 40px); /* Adjusted width for padding */
+  height: 1px;
+  background-color: black;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+/* Ensure separator lines are displayed correctly */
+.task-area__task-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Adjustments for Scrollable Task Area */
+.task-area__task-wrapper:last-child .task-area__separator {
+  display: none; /* Hide separator after the last task */
+}
