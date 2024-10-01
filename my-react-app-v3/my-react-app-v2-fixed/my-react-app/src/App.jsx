@@ -183,6 +183,11 @@ function App() {
     // Filter out tasks that are assigned to a sprint (sprintId is not null)
     displayedTasks = displayedTasks.filter((task) => task.sprintId === null);
 
+    displayedTasks = displayedTasks.map((task) => ({
+      ...task,
+      status: 'Not Started',
+    }));
+
     // Apply filtering
     if (filterTags.length > 0) {
       displayedTasks = displayedTasks.filter((task) =>
