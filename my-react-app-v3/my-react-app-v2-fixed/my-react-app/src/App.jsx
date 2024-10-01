@@ -303,7 +303,7 @@ function App() {
     // Set the sprintId of all tasks associated with this sprint to null
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.sprintId === sprintId ? { ...task, sprintId: null } : task
+        task.sprintId === sprintId ? { ...task, sprintId: null, status: 'not-started' } : task
       )
     );
   
